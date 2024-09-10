@@ -8,20 +8,35 @@ const Screen({ super.key });
 }
 
 class _ScreenState extends State<Screen> {
-  
+  final destinations = [
+    {"title": "Pacientes", "icon": Icons.people},
+    {"title": "Consultas Recientes", "icon": Icons.calendar_today},
+    {"title": "Medicamentos", "icon": Icons.medication},
+    {"title": "Citas Proximas", "icon": Icons.settings},
+  ];
+  int selectedIndex = 0;
+
   @override
   Widget build(BuildContext context){
     return Scaffold(
       appBar: AppBar(
-        title: Text("Title"),
+        title: Text(destinations[selectedIndex]["title"] as String),
       ),
       body: Row(
         children: [
           NavigationRail(
-            destinations: 
-              
-            selectedIndex: 
-          )
+            destinations: destinations.map((e) => NavigationRailDestination(
+              icon: Icon(e["icon"] as IconData),
+              label: Text(e["title"] as String),
+            )).toList(),
+            selectedIndex: selectedIndex
+          ),
+          Expanded(
+            flex: 2,
+            child: Container(
+              color: Colors.grey,
+            ),
+          ),
         ],
       ),
     );

@@ -3,7 +3,8 @@ import 'package:med_copilot/model/patient.dart';
 class PatientRepository {
 
   Future<List<Patient>> getPatients() async {
-    return [Patient(
+    return Future.delayed(const Duration(seconds: 2), () => [Patient(
+      id: 1,
       personalId: "123456789",
       name: "Juan",
       lastname: "Perez",
@@ -12,6 +13,7 @@ class PatientRepository {
       phone: "123456789",
       seguimiento: true,
     ),Patient(
+      id: 2,
       personalId: "123456789",
       name: "Juan",
       lastname: "Perez",
@@ -19,11 +21,12 @@ class PatientRepository {
       email: "mail.com",
       phone: "123456789",
       seguimiento: true,
-    )];
+    )]); 
   }
 
   Future<Patient> getPatientById(int id) async {
     return Patient(
+      id: 1,
       personalId: "123456789",
       name: "Juan",
       lastname: "Perez",

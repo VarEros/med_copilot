@@ -20,4 +20,6 @@ class ConsultationService {
   Future saveConsultation(Consultation consultation) async {
     await consultationRepository.saveConsultation(consultation);
   }
+
+  Consultation emptyConsultation() => Consultation(id: 0, description: '', date: DateTime.now(), patient: null);
 }

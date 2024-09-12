@@ -3,12 +3,12 @@ import 'package:med_copilot/model/consultation.dart';
 class ConsultationRepository {
   Future<List<Consultation>> getConsultations() async {
     // Fetch data from API
-    return [];
+    return Future.delayed(const Duration(seconds: 1), () => [Consultation(id: 1, description: 'Consultation description', date: DateTime.now(), patient: null)]);
   }
 
   Future<Consultation> getConsultationById(String id) async {
     // Fetch data from API
-    return Consultation(id: '1', description: 'description', date: DateTime.now(), patient: null);
+    return Future.delayed(const Duration(seconds: 1), () => Consultation(id: 1, description: 'Consultation description', date: DateTime.now(), patient: null));
   }
 
   Future<List<Consultation>> getConsultationsByPatientId(int patientId) async {

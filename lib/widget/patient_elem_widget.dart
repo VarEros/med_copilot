@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:med_copilot/model/patient.dart';
+import 'package:med_copilot/screen/consultation_list_screen.dart';
 
 class PatientElemWidget extends StatelessWidget {
   final Patient patient;
@@ -11,7 +12,15 @@ class PatientElemWidget extends StatelessWidget {
       title: Text("${patient.name} ${patient.lastname}"),
       subtitle: Text(patient.personalId),
       leading: const Icon(Icons.person),
-      trailing: const Icon(Icons.arrow_forward_ios),
+      trailing: IconButton(
+        icon: const Icon(Icons.edit),
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const ConsultationListScreen()),
+          );
+        },
+      ),
     );
   }
 }

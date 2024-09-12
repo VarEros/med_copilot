@@ -1,10 +1,10 @@
 import 'package:med_copilot/model/patient.dart';
 
 class Consultation {
-  final String id;
-  final String description;
-  final DateTime date;
-  final Patient? patient;
+  int id;
+  String description;
+  DateTime date;
+  Patient? patient;
 
   Consultation({
     required this.id,

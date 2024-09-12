@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_login/flutter_login.dart';
+import 'package:med_copilot/screen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({ super.key });
@@ -31,11 +32,7 @@ class _LoginScreenState extends State<LoginScreen> {
       onSignup: null,
       onSubmitAnimationCompleted: () {
         Navigator.of(context).pushReplacement(MaterialPageRoute(
-          builder: (context) => const Scaffold(
-            body: Center(
-              child: Text('Login successful'),
-            ),
-          ),
+          builder: (context) => const Screen()
         ));
       },
       userValidator: defaultEmailValidator,
